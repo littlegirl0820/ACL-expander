@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ACL Expander</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <h1>Browser ACL Expander</h1>
+      <p class="hero-note">
+        Unofficial tool. Expand official C++ ACL headers, Python ACL modules, or Rust ac-library-rs code entirely in your browser.
+      </p>
+    </header>
+
+    <main class="workspace">
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Input</h2>
+            <p>C++ / Python / Rust の ACL コードを貼り付けます。</p>
+          </div>
+          <div class="button-row">
+            <label class="language-picker" for="languageSelect">
+              <span>Language</span>
+              <select id="languageSelect">
+                <option value="cpp">C++</option>
+                <option value="python">Python</option>
+                <option value="rust">Rust</option>
+              </select>
+            </label>
+            <button id="sampleButton" type="button" class="ghost">Sample</button>
+            <button id="expandButton" type="button">Expand</button>
+          </div>
+        </div>
+        <label class="sr-only" for="inputCode">Input code</label>
+        <textarea id="inputCode" spellcheck="false"></textarea>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h2>Output</h2>
+            <p>展開結果をコピーまたは保存できます。</p>
+          </div>
+          <div class="button-row">
+            <button id="copyButton" type="button" class="ghost">Copy</button>
+            <button id="downloadButton" type="button" class="ghost">Download</button>
+          </div>
+        </div>
+        <label class="sr-only" for="outputCode">Expanded code</label>
+        <textarea id="outputCode" spellcheck="false" readonly></textarea>
+        <p id="statusMessage" class="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        Unofficial fan-made tool. All expansion is done client-side in the
+        browser. C++ AtCoder Library is distributed under CC0-1.0,
+        `ac-library-python` is distributed under MIT, and
+        `ac-library-rs` is distributed under CC0-1.0. Sources:
+        <a href="https://github.com/atcoder/ac-library" target="_blank" rel="noreferrer">atcoder/ac-library</a>
+        /
+        <a href="https://github.com/not522/ac-library-python" target="_blank" rel="noreferrer">not522/ac-library-python</a>
+        /
+        <a href="https://github.com/rust-lang-ja/ac-library-rs" target="_blank" rel="noreferrer">rust-lang-ja/ac-library-rs</a>
+      </p>
+    </footer>
+  </div>
+
+  <script type="module" src="./src/app.js"></script>
+</body>
+
+</html>
